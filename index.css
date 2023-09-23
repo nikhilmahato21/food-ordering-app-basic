@@ -63,7 +63,98 @@ body {
    }
    .footer{
     background-color: aliceblue;
+    
    }
+   #restaurant-section{
+    padding:0 10%;
+    
+   }
+   #restaurant-info{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px 20px;
+    border-bottom: 1px solid gray;
+   }
+   #restaurant-info img{
+    border-radius: 20px;
+    margin-bottom: 6px;
+    
+   }
+   #restaurant-info h5{
+    
+    line-height: 30px;
+    font-weight: bold;
+   }
+   #restaurant-info h6{
+    line-height: 20px;
+    font-weight: bold;
+   }
+   #rating{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   #restaurant-rating{
+    border:1px solid gray;
+    padding: 20px 20px;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+   
+   }
+   
+   #restaurant-rating h6{
+    font-size: 20px;
+    font-weight: 900;
+    line-height:30px;
+    
+   }
+   #menu-section{
+    padding-top: 10px;
+   }
+   #menu-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0;
+    border-bottom: 1px solid gray;
+    
+   }
+   #menu-items img {
+    width: 40%;
+    border-radius: 12px;
+    margin: 3px;
+   }
+   #menu-items p{
+    color: gray;
+   }
+   #menu-items h5 {
+    line-height: 30px;
+   }
+   #menu-items h6 {
+    line-height: 30px;
+    font-weight: 900;
+    font-size: 20px;
+   }
+   #menu-items button{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    font-size: 10px;
+    font-weight: bold;
+    border: none;
+    padding: 8px 20px;
+    margin: 1px;
+   }
+   #item-name{
+    width: 80%;
+    
+   }
+   #item-add{
+    width: 20%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+   }
+   
   @media screen and (min-width: 1200px) {
     .container{
         

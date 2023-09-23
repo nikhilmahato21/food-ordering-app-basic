@@ -10,6 +10,9 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import InstaMart from "./components/InstaMart";
 import Footer from "./components/Footer";
 import userContext from "./utils/userContext";
+import { Provider } from "react-redux";
+import store from "./utils/store";
+import Cart from "./components/Cart";
 
 const Layout = () => {
   const [user, setUser] = useState({
@@ -18,11 +21,13 @@ const Layout = () => {
   });
   return (
     <>
-      <userContext.Provider value={{ user: user }}>
-        <Header />
-        <Outlet />
-        <Footer />
-      </userContext.Provider>
+      <Provider store={store}>
+        <userContext.Provider value={{ user: user }}>
+          <Header />
+          <Outlet />
+          <Footer />
+        </userContext.Provider>
+      </Provider>
     </>
   );
 };
@@ -52,6 +57,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:id",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

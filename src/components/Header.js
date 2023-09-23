@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import userContext from "../utils/userContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const { user } = useContext(userContext);
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -41,13 +44,13 @@ const Header = () => {
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Cart
-              </a>
+              <Link className="nav-link" to="/cart">
+                Cart({cartItems.length})
+              </Link>
             </li>
           </ul>
         </div>
-        <div className="profile">{user.name.charAt(0).toUpperCase()}</div>
+        {/* <div className="profile">{user.name.charAt(0).toUpperCase()}</div> */}
       </div>
     </nav>
   );
