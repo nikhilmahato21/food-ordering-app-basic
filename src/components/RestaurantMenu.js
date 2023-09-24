@@ -14,12 +14,13 @@ const RestaurantMenu = () => {
   const restaurantMenu = useRestaurantMenu(id);
   const menuItems = useMenuItems(id);
 
-  console.log(menuItems);
-
   const dispatch = useDispatch();
 
   const addFoodItem = (item) => {
     dispatch(addItem(item));
+  };
+  const removeFoodItem = (item) => {
+    dispatch(removeItem(item));
   };
   return !restaurantMenu ? (
     <ShimmerCard />
@@ -61,7 +62,7 @@ const RestaurantMenu = () => {
         <div id="menu-section">
           <h2>Menu Recommended ({menuItems.length})</h2>
           {menuItems?.map((item, index) => (
-            <div id="menu-items">
+            <div key={index} id="menu-items">
               <div id="item-name">
                 <h5>{item?.name}</h5>
                 <p>{item?.description}</p>
@@ -71,7 +72,7 @@ const RestaurantMenu = () => {
               <div id="item-add">
                 <img src={ITEM_IMG_CDN_URL + item?.imageId} />
 
-                <button>-</button>
+                <button onClick={() => removeFoodItem(item)}>-</button>
                 <button
                   onClick={() => {
                     addFoodItem(item);

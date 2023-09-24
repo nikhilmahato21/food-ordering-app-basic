@@ -7,7 +7,6 @@ body {
 }
 
 
-
 .card{
 
     
@@ -137,12 +136,13 @@ body {
     font-size: 20px;
    }
    #menu-items button{
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    font-size: 10px;
+   
+    font-size: 30px;
     font-weight: bold;
-    border: none;
-    padding: 8px 20px;
+    border: 1px solid gray;
+    padding: 0 10px;
     margin: 1px;
+    background-color: white;
    }
    #item-name{
     width: 80%;
